@@ -54,12 +54,12 @@ export const itemCountReducer = (state = CART_STATE, { type, payload }) => {
         case ActionTypes.ADD_ONE:
             return {
                 ...state,
-                cart: state.cart.map((product) => product.id == payload ? { ...product, quantity: product.quantity + 1 } : product)
+                cart: state.cart.map((product) => product.id === payload ? { ...product, quantity: product.quantity + 1 } : product)
             }
         case ActionTypes.SUB_ONE:
             return {
                 ...state,
-                cart: state.cart.map((product) => product.id == payload ? { ...product, quantity: product.quantity !== 1 ? product.quantity - 1 : 1, } : product)
+                cart: state.cart.map((product) => product.id === payload ? { ...product, quantity: product.quantity !== 1 ? product.quantity - 1 : 1, } : product)
             }
 
         default:
