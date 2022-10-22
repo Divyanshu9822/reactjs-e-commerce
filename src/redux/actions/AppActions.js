@@ -6,12 +6,7 @@ export const setProducts = (products) => {
         payload: products,
     }
 }
-export const selectCategory = (products) => {
-    return {
-        type: ActionTypes.SELECTED_CATEGORY,
-        payload: products,
-    }
-}
+
 export const selectedProduct = (product) => {
     return {
         type: ActionTypes.SELECTED_PRODUCT,
@@ -36,15 +31,15 @@ export const removeFromCart = (product) => {
         payload: product,
     }
 }
-export const incrementItemCount = (id) => {
+export const incrementItemCount = (product) => {
     return {
         type: ActionTypes.ADD_ONE,
-        payload: id,
+        payload: product,
     }
 }
-export const decrementItemCount = (id) => {
+export const decrementItemCount = (product) => {
     return {
         type: ActionTypes.SUB_ONE,
-        payload: id,
+        payload: product,
     }
 }

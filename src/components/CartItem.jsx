@@ -1,22 +1,20 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
 import { removeFromCart } from '../redux/actions/AppActions';
-import { incrementItemCount, decrementItemCount } from '../redux/actions/AppActions'
+import { incrementItemCount, decrementItemCount } from '../redux/actions/AppActions';
 
 const CartItem = (props) => {
 
     const dispatch = useDispatch();
-    
-    // const fetchData = async (productDetail) => {
-    //     const response = await fetch(`https://fakestoreapi.com/products/${productDetail.id}`);
-    //     const data = await response.json();
-    //     return data;
-    // }
-    // const cartItem = fetchData(productDetail);
+    // const itemCount = useSelector(state => state.cartProducts.cart.map(product => product.quantity));
     return (
+
         <div className="row border rounded mb-3">
             <div className="col-md-5 col-11 mx-auto  d-flex justify-content-center align-items-center">
-                <img className='p-3' src={props.product.image} height="150px" />
+                <Link className="nav-link" to={`/product/${props.product.id}`}>
+                    <img className='p-3' src={props.product.image} height="150px" />
+                </Link>
             </div>
 
             <div className="col-md-7 col-11 mx-auto py-3">
@@ -28,14 +26,14 @@ const CartItem = (props) => {
                     <div className="col-6">
                         <ul className="pagination justify-content-end">
                             <li className="page-item">
-                                <button className='btn btn-outline-dark' onClick={() => dispatch(decrementItemCount(props.product.id))}><i className="fa-solid fa-minus "></i></button>
+                                <button className='btn btn-outline-dark' onClick={() => dispatch(decrementItemCount(props.product))}><i className="fa-solid fa-minus "></i></button>
                             </li>
                             <li className="page-item">
-                                <button disabled="disabled" className='btn btn-light'>1</button>
+                                <button disabled="disabled" className='btn btn-light'>{props.product.quantity}</button>
 
                             </li>
                             <li className="page-item">
-                                <button className='btn btn-outline-dark' onClick={() => dispatch(incrementItemCount(props.product.id))}><i className="fa-solid fa-plus "></i></button>
+                                <button className='btn btn-outline-dark' onClick={() => dispatch(incrementItemCount(props.product))}><i className="fa-solid fa-plus "></i></button>
                             </li>
                         </ul>
                     </div>
@@ -50,6 +48,7 @@ const CartItem = (props) => {
                 </div>
             </div>
         </div>
+
     )
 }
 

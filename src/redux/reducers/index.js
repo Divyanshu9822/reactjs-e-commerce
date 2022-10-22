@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
-import { productsReducer, categoryReducer, cartReducer, selectedProductReducer, itemCountReducer } from './AppReducer';
+import { productsReducer, cartReducer, selectedProductReducer } from './AppReducer';
 
 const reducers = combineReducers({
     allProducts: productsReducer,
-    selectedCategory: categoryReducer,
     product: selectedProductReducer,
-    itemCount: itemCountReducer,
     cartProducts: cartReducer,
 })
 

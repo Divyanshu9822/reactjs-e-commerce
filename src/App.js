@@ -9,9 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="text-center text-danger">THIS PROJECT IS NOT COMPLETED YET</h1>
       <Router>
-        {/* <Testnav/> */}
         <Navbar />
         <Routes>
           <Route exact path="/" element={<ProductList/>} />
