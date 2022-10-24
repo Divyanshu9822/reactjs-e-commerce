@@ -14,8 +14,8 @@ const ProductDetails = () => {
     const fetchProduct = async () => {
         const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
         const data = await response.json();
-        dispatch(selectedProduct(data));
         setIsLoading(true);
+        dispatch(selectedProduct(data));
     }
     useEffect(() => {
         fetchProduct();
@@ -41,7 +41,6 @@ const ProductDetails = () => {
                                 <div className="p-3 right-side">
                                     <div className="d-flex justify-content-between align-items-center my-2">
                                         <h2>{product.title}</h2>
-                                        {/* <span className="border border-secondary rounded-circle"><i className="fa-regular fa-heart p-2"></i></span> */}
                                     </div>
                                     <p className="text-muted">Category : {product.category}</p>
                                     <div className="mt-2 pr-3 content">

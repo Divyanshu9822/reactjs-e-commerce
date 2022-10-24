@@ -7,7 +7,7 @@ import { incrementItemCount, decrementItemCount } from '../redux/actions/AppActi
 const CartItem = (props) => {
 
     const dispatch = useDispatch();
-    // const itemCount = useSelector(state => state.cartProducts.cart.map(product => product.quantity));
+
     return (
 
         <div className="row border rounded mb-3">

@@ -6,5 +6,6 @@ const ActionTypes = {
     REMOVE_FROM_CART: "REMOVE_FROM_CART",
     ADD_ONE: "ADD_ONE",
     SUB_ONE: "SUB_ONE",
+    CART_TOTAL:"CART_TOTAL",
 }
 export default ActionTypes;

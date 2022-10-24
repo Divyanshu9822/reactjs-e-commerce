@@ -43,3 +43,9 @@ export const decrementItemCount = (product) => {
         payload: product,
     }
 }
+
+export const totalAmountCart = () => {
+    return{
+        type: ActionTypes.CART_TOTAL,
+    }
+}
